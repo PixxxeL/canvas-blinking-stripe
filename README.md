@@ -4,7 +4,7 @@ Blinking Stripe on image with alpha using canvas
 
 ## Preview
 
-http://pixxxxxel.blogspot.ru/
+http://pixxxxxel.blogspot.ru/2013/03/js.html
 
 ## Usage
 
