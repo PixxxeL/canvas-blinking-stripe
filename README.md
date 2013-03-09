@@ -4,7 +4,7 @@ Blinking Stripe on image with alpha using canvas
 
 ## Preview
 
-http://pixxxxxel.blogspot.ru/2013/03/js.html
+http://www.pixel-tyumen.ru/canvas-blinking-stripe/
 
 ## Usage
 
@@ -25,6 +25,6 @@ $( function () {
 ```
 This module required jQuery lib.
 
-## Àvailable
+## Available
 
 In browsers that canvas supported (IE > 8, FF, Chrome, Opera, Safari etc)
