@@ -1,0 +1,11 @@
+﻿copy
+destination-atop
+destination-in
+destination-out
+destination-over
+source-atop
+source-in
+source-out
+source-over
+lighter
+xor

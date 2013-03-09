@@ -1,0 +1,20 @@
+#header-logo-container-holder {
+	background: #efefef;
+	width: 940px;
+	height: 400px;
+	text-align: center;
+}
+#header-logo-container-holder #header-logo-container {
+	margin: 100px 0 0 370px;
+	float: left;
+}
+/* До этого - ненужные стили. Ниже - нужные */
+#header-logo-container {
+	width: 200px;
+	height: 150px;
+	background: url(../img/logo-header/green-lines-background.png);
+	border: #fff outset 2px;
+}
+#header-logo-container img {
+	margin-top: 4px;
+}
