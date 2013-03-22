@@ -70,9 +70,7 @@ var BlinkingStripe = function (options) {
 		if (!isCanvasSupported) {
 			return;
 		}
-		$canvas = $('<canvas\/>')
-			.attr('width', canvasWidth + 'px')
-			.attr('height', canvasHeight + 'px');
+		$canvas = $('<canvas\/>').attr({'width': canvasWidth, 'height': canvasHeight});
 		ctx = $canvas[0].getContext("2d");
 		$logoImg.hide();
 		$container.append($canvas);
