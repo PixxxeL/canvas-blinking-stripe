@@ -5,6 +5,7 @@
  * 
  * @author	piksel@mail.ru
  * @date	2013-03-09
+ * @updated 2014-04-24
  * @required	jQuery
  * @usage	BlinkingStripe({$container : $('#some-container-with-image')}).run();
  * @param	options
@@ -12,8 +13,7 @@
  * 		minDelay	in ms
  * 		maxDelay	in ms
  * @return	that
- * @note	image size must be the same as the container size,
- * because not work properly in Safari (for Win)
+ * @version 1.1
  * 
  * jslint bitwise: true, white: true, browser: true
  */
@@ -38,6 +38,15 @@ var BlinkingStripe = function (options) {
 		delay = 30,
 		minDelay = options.minDelay || 3000,
 		maxDelay = options.maxDelay || 3000,
+		awaitingLoading = function () {
+			logoWidth = $logoImg.width();
+			logoHeight = $logoImg.height();
+			if (logoWidth && logoHeight) {
+				draw();
+			} else {
+				setTimeout(awaitingLoading, 100);
+			}
+		},
 		delayRand = function () {
 			return (Math.random() * maxDelay + minDelay) >> 0;
 		},
@@ -78,7 +87,7 @@ var BlinkingStripe = function (options) {
 		stripe.addColorStop(  0, 'rgba(255,255,255,0)');
 		stripe.addColorStop(0.5, 'rgba(255,255,255,1)');
 		stripe.addColorStop(  1, 'rgba(255,255,255,0)');
-		draw();
+		awaitingLoading();
 	};
 	return that;
 };
