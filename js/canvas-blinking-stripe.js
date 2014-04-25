@@ -5,7 +5,7 @@
  * 
  * @author   piksel@mail.ru
  * @date     2013-03-09
- * @updated  2014-04-24
+ * @updated  2014-04-25
  * @required jQuery
  * @usage    BlinkingStripe({$container : $('#some-container-with-image')}).run();
  * @param    options
@@ -13,7 +13,7 @@
  *         minDelay    in ms
  *         maxDelay    in ms
  * @return    that
- * @version 1.1
+ * @version 1.2
  * 
  * jslint bitwise: true, white: true, browser: true
  */
@@ -28,13 +28,14 @@ var BlinkingStripe = function (options) {
         ctx = null,
         canvasWidth = $container.width(),
         canvasHeight = $container.height(),
+        canvasMax = Math.max(canvasWidth, canvasHeight),
         $logoImg = $container.find('img'),
         logoWidth = $logoImg.width(),
         logoHeight = $logoImg.height(),
         stripe = null,
         toRad = Math.PI / 180,
         angle = -45 * toRad,
-        dx = -90, // -90, 60
+        dx = -canvasMax,
         delay = 30,
         minDelay = options.minDelay || 3000,
         maxDelay = options.maxDelay || 3000,
@@ -42,25 +43,24 @@ var BlinkingStripe = function (options) {
             return (Math.random() * maxDelay + minDelay) >> 0;
         },
         draw = function () {
-            dx += 5;
+            dx += 7;
             delay = 30;
-            if (dx > 60) {
-                dx = -90;
+            if (dx > canvasMax) {
+                dx = -canvasMax;
                 delay = delayRand();
             }
             ctx.clearRect(0, 0, canvasWidth, canvasHeight);
             ctx.save();
             ctx.save();
             ctx.rotate(angle);
-            ctx.scale(2, 2);
             ctx.translate(dx, 0);
             ctx.fillStyle = stripe;
-            ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+            ctx.fillRect(0, 0, canvasMax, canvasMax);
             ctx.restore();
             ctx.globalCompositeOperation = 'destination-atop';
             ctx.drawImage(
-                $logoImg[0], 
-                (canvasWidth - logoWidth) * 0.5, 
+                $logoImg[0],
+                (canvasWidth - logoWidth) * 0.5,
                 (canvasHeight - logoHeight) * 0.5
             );
             ctx.restore();
@@ -72,7 +72,7 @@ var BlinkingStripe = function (options) {
             if (logoWidth && logoHeight) {
                 draw();
             } else {
-            	setTimeout(awaitingLoading, 100);
+                setTimeout(awaitingLoading, 100);
             }
         };
     that.run = function () {

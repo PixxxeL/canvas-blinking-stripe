@@ -1,20 +1,24 @@
 #header-logo-container-holder {
 	background: #efefef;
 	width: 940px;
-	height: 400px;
+	padding: 20px 0;
 	text-align: center;
 }
-#header-logo-container-holder #header-logo-container {
-	margin: 100px 0 0 370px;
-	float: left;
-}
-/* До этого - ненужные стили. Ниже - нужные */
-#header-logo-container {
-	width: 200px;
-	height: 150px;
-	background: url(../img/logo-header/green-lines-background.png);
+#header-h-container {
+	display: block;
+	width: 500px;
+	height: 50px;
 	border: #fff outset 2px;
+	background: url(../img/logo-header/background.png);
+	margin: 20px auto 0 auto;
+	padding: 10px;
 }
-#header-logo-container img {
-	margin-top: 4px;
+#header-v-container {
+	display: block;
+	width: 50px;
+	height: 500px;
+	border: #fff outset 2px;
+	background: url(../img/logo-header/background.png);
+	margin: 20px auto 0 auto;
+	padding: 10px;
 }
