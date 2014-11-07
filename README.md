@@ -4,13 +4,13 @@ Blinking Stripe on image with alpha using canvas
 
 ## Preview
 
-http://www.pixel-tyumen.ru/canvas-blinking-stripe/
+http://www.pixel-tyumen.ru/works/canvas-blinking-stripe/
 
 ## Usage
 
 For usage of this javascript module must define some HTML in content block:
 ```html
-<a id="header-logo-container" href="/" title="Íà ãëàâíóþ">
+<a id="header-logo-container" href="/" title="ÃÃ  Ã£Ã«Ã Ã¢Ã­Ã³Ã¾">
     <img src="path-to-your-image-with-alpha-possible.png" alt="">
 </a>
 ```
